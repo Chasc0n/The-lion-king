@@ -3,49 +3,287 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Favorite Children's Story — The Lion King (20 lines, simple past)</title>
+  <title>Lion King Story Game</title>
   <style>
-    :root{font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    body{margin:0;background:#f7fafc;color:#0f172a;display:flex;min-height:100vh;align-items:center;justify-content:center}
-    .card{max-width:900px;width:96%;background:white;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.12);padding:28px}
-    h1{margin:0 0 8px;font-size:20px}
-    p.instruction{margin:0 0 18px;color:#334155}
-    ol.story{padding-left:20px;margin:0 0 18px}
-    ol.story li{margin:8px 0;padding:6px 8px;border-left:3px solid #e2e8f0;background:linear-gradient(180deg, rgba(226,232,240,0.4), transparent);}
-    footer{font-size:13px;color:#64748b}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f4f6f9;
+      color: #1e293b;
+      display: flex;
+      justify-content: center;
+      padding: 40px 10px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      max-width: 850px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    ol {
+      padding-left: 20px;
+    }
+    li {
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+    select {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 15px;
+      margin: 0 6px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1e40af;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+      font-weight: bold;
+      text-align: center;
+    }
+    .correct { background: #dcfce7; color: #166534; }
+    .incorrect { background: #fee2e2; color: #991b1b; }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Favorite Children's Story — "The Lion King"</h1>
-    <p class="instruction">Instructions followed: exactly 20 lines, one simple past tense verb per line, simple & clear language, past tense throughout, and a beginning / middle / end structure.</p>
+  <div class="container">
+    <h1>The Lion King — Choose the Past Tense Verb</h1>
+    <p>Select the correct past tense verb for each sentence. The verb in base form is shown as a clue.</p>
+    <form id="quiz">
+      <ol>
+        <li>Simba 
+          <select data-answer="was">
+            <option value="">--Choose--</option>
+            <option>were</option>
+            <option>was</option>
+            <option>be</option>
+          </select> 
+          born in the Pride Lands. (be)
+        </li>
+        <li>Mufasa 
+          <select data-answer="loved">
+            <option value="">--Choose--</option>
+            <option>love</option>
+            <option>liked</option>
+            <option>loved</option>
+          </select> 
+          his son deeply. (love)
+        </li>
+        <li>Scar 
+          <select data-answer="envied">
+            <option value="">--Choose--</option>
+            <option>envied</option>
+            <option>enjoyed</option>
+            <option>envy</option>
+          </select> 
+          his brother. (envy)
+        </li>
+        <li>Simba 
+          <select data-answer="played">
+            <option value="">--Choose--</option>
+            <option>plays</option>
+            <option>played</option>
+            <option>play</option>
+          </select> 
+          with Nala. (play)
+        </li>
+        <li>Mufasa 
+          <select data-answer="taught">
+            <option value="">--Choose--</option>
+            <option>teach</option>
+            <option>teached</option>
+            <option>taught</option>
+          </select> 
+          Simba about life. (teach)
+        </li>
+        <li>Scar 
+          <select data-answer="planned">
+            <option value="">--Choose--</option>
+            <option>plan</option>
+            <option>planned</option>
+            <option>plans</option>
+          </select> 
+          a trap. (plan)
+        </li>
+        <li>The wildebeest 
+          <select data-answer="ran">
+            <option value="">--Choose--</option>
+            <option>runned</option>
+            <option>ran</option>
+            <option>run</option>
+          </select> 
+          wildly. (run)
+        </li>
+        <li>Simba 
+          <select data-answer="screamed">
+            <option value="">--Choose--</option>
+            <option>scream</option>
+            <option>screamed</option>
+            <option>screams</option>
+          </select> 
+          for help. (scream)
+        </li>
+        <li>Mufasa 
+          <select data-answer="saved">
+            <option value="">--Choose--</option>
+            <option>saves</option>
+            <option>saved</option>
+            <option>save</option>
+          </select> 
+          his son. (save)
+        </li>
+        <li>Scar 
+          <select data-answer="betrayed">
+            <option value="">--Choose--</option>
+            <option>betray</option>
+            <option>betrayed</option>
+            <option>betrays</option>
+          </select> 
+          his brother. (betray)
+        </li>
+        <li>Simba 
+          <select data-answer="blamed">
+            <option value="">--Choose--</option>
+            <option>blamed</option>
+            <option>blame</option>
+            <option>blames</option>
+          </select> 
+          himself. (blame)
+        </li>
+        <li>Scar 
+          <select data-answer="ordered">
+            <option value="">--Choose--</option>
+            <option>ordered</option>
+            <option>order</option>
+            <option>orders</option>
+          </select> 
+          Simba to run. (order)
+        </li>
+        <li>Simba 
+          <select data-answer="escaped">
+            <option value="">--Choose--</option>
+            <option>escapes</option>
+            <option>escape</option>
+            <option>escaped</option>
+          </select> 
+          into the desert. (escape)
+        </li>
+        <li>Timon and Pumbaa 
+          <select data-answer="found">
+            <option value="">--Choose--</option>
+            <option>find</option>
+            <option>found</option>
+            <option>founded</option>
+          </select> 
+          him. (find)
+        </li>
+        <li>They 
+          <select data-answer="raised">
+            <option value="">--Choose--</option>
+            <option>raise</option>
+            <option>raised</option>
+            <option>raises</option>
+          </select> 
+          Simba happily. (raise)
+        </li>
+        <li>Nala 
+          <select data-answer="discovered">
+            <option value="">--Choose--</option>
+            <option>discover</option>
+            <option>discovered</option>
+            <option>discovers</option>
+          </select> 
+          Simba alive. (discover)
+        </li>
+        <li>She 
+          <select data-answer="begged">
+            <option value="">--Choose--</option>
+            <option>beg</option>
+            <option>begged</option>
+            <option>begs</option>
+          </select> 
+          him to return. (beg)
+        </li>
+        <li>Simba 
+          <select data-answer="remembered">
+            <option value="">--Choose--</option>
+            <option>remember</option>
+            <option>remembers</option>
+            <option>remembered</option>
+          </select> 
+          his father. (remember)
+        </li>
+        <li>He 
+          <select data-answer="fought">
+            <option value="">--Choose--</option>
+            <option>fighted</option>
+            <option>fight</option>
+            <option>fought</option>
+          </select> 
+          Scar bravely. (fight)
+        </li>
+        <li>Simba 
+          <select data-answer="became">
+            <option value="">--Choose--</option>
+            <option>become</option>
+            <option>became</option>
+            <option>becomes</option>
+          </select> 
+          the true king. (become)
+        </li>
+      </ol>
+      <button type="button" onclick="checkAnswers()">Check Answers</button>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
 
-    <ol class="story">
-      <li>Simba was born in the Pride Lands.</li>
-      <li>Mufasa loved his son deeply.</li>
-      <li>Scar envied his brother.</li>
-      <li>Simba played with Nala.</li>
-      <li>Mufasa taught Simba about life.</li>
-      <li>Scar planned a trap.</li>
-      <li>The wildebeest ran wildly.</li>
-      <li>Simba screamed for help.</li>
-      <li>Mufasa saved his son.</li>
-      <li>Scar betrayed his brother.</li>
-      <li>Simba blamed himself.</li>
-      <li>Scar ordered Simba to run.</li>
-      <li>Simba escaped into the desert.</li>
-      <li>Timon and Pumbaa found him.</li>
-      <li>They raised Simba happily.</li>
-      <li>Nala discovered Simba alive.</li>
-      <li>She begged him to return.</li>
-      <li>Simba remembered his father.</li>
-      <li>He fought Scar bravely.</li>
-      <li>Simba became the true king.</li>
-    </ol>
-
-    <footer>
-      <p>Generated HTML page — ready to save as <code>the-lion-king-20-line-story.html</code> and open in a browser.</p>
-    </footer>
-  </main>
+  <script>
+    function checkAnswers() {
+      const selects = document.querySelectorAll("select[data-answer]");
+      let correct = 0;
+      selects.forEach(sel => {
+        const expected = sel.getAttribute("data-answer");
+        const given = sel.value;
+        if (given === expected) {
+          correct++;
+          sel.style.borderColor = "#22c55e"; // green
+        } else {
+          sel.style.borderColor = "#ef4444"; // red
+        }
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      if (correct === selects.length) {
+        result.className = "result correct";
+        result.textContent = "Excellent! All answers are correct ✅";
+      } else {
+        result.className = "result incorrect";
+        result.textContent = `You got ${correct} out of ${selects.length} correct. Try again!`;
+      }
+    }
+  </script>
 </body>
 </html>
+
+
